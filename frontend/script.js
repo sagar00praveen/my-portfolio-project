@@ -1,16 +1,21 @@
-document.getElementById("contactForm").addEventListener("submit", async function(e) {
-  e.preventDefault();
+document.getElementById('contactForm').addEventListener('submit', function(e) {
+    e.preventDefault();
 
-  const response = await fetch("https://YOUR_BACKEND_URL/api/contact", {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({
-      name: document.getElementById("name").value,
-      email: document.getElementById("email").value,
-      message: document.getElementById("message").value,
-    }),
-  });
+    const name = document.getElementById('name').value;
+    const email = document.getElementById('email').value;
+    const message = document.getElementById('message').value;
 
-  const data = await response.json();
-  alert(data.message || "Message Sent");
+    fetch('/contact', {
+        method: 'POST',
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify({ name, email, message })
+    })
+    .then(response => response.json())
+    .then(data => {
+        alert('Message sent successfully!');
+    })
+    .catch(error => {
+        alert('There was an error sending your message.');
+        console.error(error);
+    });
 });
