@@ -1,45 +1,121 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>My Portfolio</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <header>
-        <h1>Welcome to My Portfolio</h1>
-        <nav>
-            <a href="#about">About</a>
-            <a href="#projects">Projects</a>
-            <a href="#contact">Contact</a>
-        </nav>
-    </header>
+/* Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
 
-    <section id="about">
-        <h2>About Me</h2>
-        <p>This is a brief description about me.</p>
-    </section>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-    <section id="projects">
-        <h2>Projects</h2>
-        <div class="project">Project 1</div>
-        <div class="project">Project 2</div>
-        <div class="project">Project 3</div>
-    </section>
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f9f9f9;
+    color: #333;
+    line-height: 1.6;
+}
 
-    <section id="contact">
-        <h2>Contact Me</h2>
-        <form id="contactForm">
-            <input type="text" id="name" placeholder="Your Name" required><br>
-            <input type="email" id="email" placeholder="Your Email" required><br>
-            <textarea id="message" placeholder="Your Message" required></textarea><br>
-            <button type="submit">Send</button>
-        </form>
-    </section>
+header {
+    background-color: #0f172a;
+    color: #fff;
+    padding: 1.5rem 1rem;
+    text-align: center;
+}
 
-    <footer>
-        <p>© 2025 My Portfolio</p>
-    </footer>
+header h1 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
 
-    <script src="script.js"></script>
-</body>
-</html>
+nav {
+    margin-top: 0.5rem;
+}
+
+nav a {
+    color: #facc15;
+    margin: 0 1rem;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s;
+}
+
+nav a:hover {
+    color: #fff;
+}
+
+section {
+    padding: 2rem 1.5rem;
+    max-width: 960px;
+    margin: auto;
+}
+
+h2 {
+    margin-bottom: 1rem;
+    color: #0f172a;
+}
+
+.project {
+    background-color: #fff;
+    margin: 1rem 0;
+    padding: 1rem;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    transition: transform 0.2s;
+}
+
+.project:hover {
+    transform: translateY(-4px);
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+input, textarea {
+    padding: 0.75rem;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 1rem;
+    width: 100%;
+}
+
+button {
+    background: linear-gradient(135deg, #6e8efb, #a777e3);
+    color: #fff;
+    padding: 0.75rem;
+    border-radius: 8px;
+    border: none;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+button:hover {
+    opacity: 0.9;
+}
+
+footer {
+    background-color: #0f172a;
+    color: #fff;
+    text-align: center;
+    padding: 1rem;
+    font-size: 0.9rem;
+    margin-top: 2rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 1.5rem;
+    }
+
+    nav a {
+        display: block;
+        margin: 0.5rem 0;
+    }
+
+    section {
+        padding: 1.5rem;
+    }
+}
