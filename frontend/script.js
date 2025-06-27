@@ -10,23 +10,23 @@ document.getElementById('contactForm').addEventListener('submit', function (e) {
     button.disabled = true;
     button.textContent = 'Sending...';
 
-    // Clear previous feedback if exists
+    // Remove old feedback
     const oldFeedback = document.getElementById('formFeedback');
     if (oldFeedback) oldFeedback.remove();
 
-    // Feedback element
+    // Create feedback element
     const feedback = document.createElement('div');
     feedback.id = 'formFeedback';
     feedback.style.marginTop = '1rem';
     feedback.style.fontWeight = 'bold';
 
-    fetch('https://your-backend.onrender.com/api/contact', { // ← Replace with your actual backend URL
+    fetch('https://my-portfolio-project-w8q9.onrender.com/api/contact', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ name, email, message })
     })
         .then(response => {
-            if (!response.ok) throw new Error('Server error');
+            if (!response.ok) throw new Error('Server responded with error');
             return response.json();
         })
         .then(data => {
@@ -39,7 +39,7 @@ document.getElementById('contactForm').addEventListener('submit', function (e) {
             feedback.textContent = '❌ Failed to send message. Please try again.';
             feedback.style.color = 'red';
             document.getElementById('contactForm').appendChild(feedback);
-            console.error(error);
+            console.error('Error:', error);
         })
         .finally(() => {
             button.disabled = false;
