@@ -1,45 +1,47 @@
 const express = require('express');
 const router = express.Router();
-const Message = require('../models/Message');
 const nodemailer = require('nodemailer');
+const Message = require('../models/Message');
 
-// POST route to receive contact form data
 router.post('/', async (req, res) => {
   try {
     const { name, email, message } = req.body;
 
-    // Save the message to MongoDB
+    // Save to MongoDB (optional, but keeping your logic)
     const newMessage = new Message({ name, email, message });
     await newMessage.save();
 
-    // Set up Nodemailer with Brevo SMTP
+    // Create transporter using Brevo SMTP
     const transporter = nodemailer.createTransport({
-      host: process.env.MAIL_HOST,
-      port: process.env.MAIL_PORT,
-      secure: false, // true for port 465, false for 587
+      host: process.env.MAIL_HOST,       // smtp-relay.brevo.com
+      port: process.env.MAIL_PORT,       // 587
       auth: {
-        user: process.env.MAIL_USER,
-        pass: process.env.MAIL_PASS
+        user: process.env.MAIL_USER,     // your Brevo email
+        pass: process.env.MAIL_PASS      // your Brevo SMTP key
       }
     });
 
-    // Email details
+    // Email options
     const mailOptions = {
-      from: `"${name}" <${email}>`, // sender name and email
-      to: 'sagar.y.praveen@gmail.com', // your receiving email
+      from: `"Portfolio Contact" <${process.env.MAIL_USER}>`, // ✅ your verified Brevo email
+      to: 'sagar.y.praveen@gmail.com',                         // ✅ your own email
+      replyTo: email,                                          // ✅ visitor’s email (for reply)
       subject: 'New Contact Form Submission',
-      text: `You received a new message from your portfolio contact form:\n\nName: ${name}\nEmail: ${email}\nMessage:\n${message}`
+      html: `
+        <h3>You've got a new message from your portfolio site:</h3>
+        <p><strong>Name:</strong> ${name}</p>
+        <p><strong>Email:</strong> ${email}</p>
+        <p><strong>Message:</strong><br/>${message}</p>
+      `
     };
 
-    // Send the email
+    // Send email
     await transporter.sendMail(mailOptions);
 
-    // Respond with success
-    res.json({ success: true, message: 'Message sent and email delivered successfully!' });
-
+    res.json({ success: true, message: 'Message sent and saved successfully!' });
   } catch (error) {
-    console.error('Error in contact route:', error);
-    res.status(500).json({ success: false, message: 'Something went wrong. Please try again later.' });
+    console.error(error);
+    res.status(500).json({ success: false, message: 'Something went wrong while sending the email.' });
   }
 });
 
