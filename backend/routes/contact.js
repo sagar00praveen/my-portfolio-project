@@ -1,45 +1,28 @@
 const express = require('express');
 const router = express.Router();
-const Message = require('../models/Message');
-const nodemailer = require('nodemailer');
+const { Resend } = require('resend');
 require('dotenv').config();
 
-router.post('/', async (req, res) => {
+const resend = new Resend(process.env.RESEND_API_KEY);
+
+router.post('/contact', async (req, res) => {
+  const { name, email, message } = req.body;
+
   try {
-    const { name, email, message } = req.body;
-
-    // 1. Save to MongoDB
-    const newMessage = new Message({ name, email, message });
-    await newMessage.save();
-
-    // 2. Send Email via Brevo (SMTP)
-    const transporter = nodemailer.createTransport({
-      host: process.env.MAIL_HOST,
-      port: process.env.MAIL_PORT,
-      auth: {
-        user: process.env.MAIL_USER,
-        pass: process.env.MAIL_PASS
-      }
+    const data = await resend.emails.send({
+      from: 'onboarding@resend.dev', // Must be a verified sender from Resend
+      to: 'sagar.y.praveen@gmail.com', // Your inbox
+      subject: 'New Contact Form Submission',
+      html: `<p><strong>Name:</strong> ${name}</p>
+             <p><strong>Email:</strong> ${email}</p>
+             <p><strong>Message:</strong> ${message}</p>`
     });
 
-    const mailOptions = {
-      from: `"Portfolio Contact" <${process.env.MAIL_USER}>`,
-      to: process.env.MAIL_USER, // Send to your own Gmail
-      subject: 'New Contact Form Submission',
-      html: `
-        <h2>New Message from Portfolio</h2>
-        <p><strong>Name:</strong> ${name}</p>
-        <p><strong>Email:</strong> ${email}</p>
-        <p><strong>Message:</strong><br/>${message}</p>
-      `
-    };
-
-    await transporter.sendMail(mailOptions);
-
-    res.json({ success: true, message: 'Message sent and email delivered successfully!' });
+    console.log('Email sent successfully:', data);
+    res.status(200).json({ message: 'Message sent successfully!' });
   } catch (error) {
-    console.error('Error in /api/contact:', error);
-    res.status(500).json({ success: false, message: 'Something went wrong.' });
+    console.error('Error sending email:', error);
+    res.status(500).json({ message: 'Failed to send message. Please try again.' });
   }
 });
 
