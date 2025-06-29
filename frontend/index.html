@@ -4,29 +4,78 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Sagar Praveen | Portfolio</title>
-  <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css"/>
 </head>
 <body>
-  <header>
-    <h1>Sagar<span class="highlight">.</span></h1>
+  <header class="glass-nav">
+    <h1 class="logo">Sagar<span class="dot">.</span></h1>
     <nav>
-      <a href="index.html">Home</a>
-      <a href="projects.html">Projects</a>
-      <a href="blender.html">Blender</a>
-      <a href="contact.html">Contact</a>
+      <a href="#about">About</a>
+      <a href="#projects">Projects</a>
+      <a href="#resume">Resume</a>
+      <a href="#contact">Contact</a>
       <button id="toggleTheme">🌓</button>
     </nav>
   </header>
 
-  <section class="hero animate__animated animate__fadeIn">
-    <h2>Hello, I'm <span class="highlight">Sagar Praveen</span></h2>
-    <p>A developer and 3D artist passionate about blending technology and creativity.</p>
-    <div class="links">
-      <a href="https://github.com/sagar00praveen" target="_blank">GitHub</a>
-      <a href="https://linkedin.com/in/sagar-praveen/" target="_blank">LinkedIn</a>
-    </div>
-  </section>
+  <main>
+    <section class="hero parallax" id="about">
+      <div class="hero-content" data-aos="fade-up">
+        <h2>Hello, I'm <span class="highlight">Sagar Praveen</span></h2>
+        <p>A software engineer & 3D artist blending code and creativity.</p>
+      </div>
+    </section>
+
+    <section class="section glass" id="projects">
+      <h2 data-aos="fade-up">My Work</h2>
+      <div class="grid">
+        <div class="card" data-aos="zoom-in">
+          <h3>Portfolio Website</h3>
+          <p>Apple-style portfolio with JS and animations.</p>
+          <a href="https://my-portfolio-project-w8q9.onrender.com" target="_blank">View</a>
+        </div>
+        <div class="card" data-aos="zoom-in">
+          <h3>Lung Cancer Detection</h3>
+          <p>Flask-based deep learning app for X-ray analysis.</p>
+          <a href="https://github.com/sagar00praveen/lung-cancer-detection" target="_blank">GitHub</a>
+        </div>
+        <div class="card" data-aos="zoom-in">
+          <h3>Spider-Man FX</h3>
+          <p>Blender animation scene with VFX and lighting.</p>
+          <a href="https://instagram.com/your_blender_page" target="_blank">Watch</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section glass techspecs" id="resume">
+      <h2 data-aos="fade-up">Resume / Tech Specs</h2>
+      <div class="spec" data-aos="fade-left">
+        <div><strong>Name:</strong></div><div>Sagar Praveen</div>
+        <div><strong>Role:</strong></div><div>Software Engineer & 3D Artist</div>
+        <div><strong>Languages:</strong></div><div>Python, JavaScript, HTML, CSS</div>
+        <div><strong>Tools:</strong></div><div>Flask, MongoDB, Blender</div>
+        <div><strong>Education:</strong></div><div>B.Tech CSE @ NRI Institute</div>
+        <div><strong>Location:</strong></div><div>Vijayawada, India</div>
+      </div>
+    </section>
+
+    <section class="section glass" id="contact">
+      <h2 data-aos="fade-up">Let's Connect</h2>
+      <form id="contactForm" data-aos="fade-up">
+        <input type="text" id="name" placeholder="Your Name" required />
+        <input type="email" id="email" placeholder="Your Email" required />
+        <textarea id="message" placeholder="Your Message" required></textarea>
+        <button type="submit">Send Message</button>
+        <div id="statusMessage"></div>
+      </form>
+    </section>
+  </main>
+
   <script src="theme.js"></script>
+  <script src="script.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>AOS.init({ once: true });</script>
 </body>
 </html>
