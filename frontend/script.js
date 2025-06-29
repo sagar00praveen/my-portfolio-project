@@ -1,48 +1,28 @@
 document.getElementById('contactForm').addEventListener('submit', function (e) {
-    e.preventDefault();
+  e.preventDefault();
 
-    const name = document.getElementById('name').value.trim();
-    const email = document.getElementById('email').value.trim();
-    const message = document.getElementById('message').value.trim();
-    const button = this.querySelector('button');
+  const name = document.getElementById('name').value.trim();
+  const email = document.getElementById('email').value.trim();
+  const message = document.getElementById('message').value.trim();
+  const statusMessage = document.getElementById('statusMessage');
 
-    // Disable the button while sending
-    button.disabled = true;
-    button.textContent = 'Sending...';
+  statusMessage.textContent = 'Sending...';
+  statusMessage.style.color = 'lightblue';
 
-    // Remove old feedback
-    const oldFeedback = document.getElementById('formFeedback');
-    if (oldFeedback) oldFeedback.remove();
-
-    // Create feedback element
-    const feedback = document.createElement('div');
-    feedback.id = 'formFeedback';
-    feedback.style.marginTop = '1rem';
-    feedback.style.fontWeight = 'bold';
-
-    fetch('https://my-portfolio-project-w8q9.onrender.com/api/contact', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ name, email, message })
+  fetch('https://my-portfolio-project-w8q9.onrender.com/api/contact', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ name, email, message })
+  })
+    .then(response => response.json())
+    .then(data => {
+      statusMessage.textContent = '✅ Message sent!';
+      statusMessage.style.color = 'green';
+      document.getElementById('contactForm').reset();
     })
-        .then(response => {
-            if (!response.ok) throw new Error('Server responded with error');
-            return response.json();
-        })
-        .then(data => {
-            feedback.textContent = '✅ Message sent successfully!';
-            feedback.style.color = 'green';
-            document.getElementById('contactForm').appendChild(feedback);
-            document.getElementById('contactForm').reset();
-        })
-        .catch(error => {
-            feedback.textContent = '❌ Failed to send message. Please try again.';
-            feedback.style.color = 'red';
-            document.getElementById('contactForm').appendChild(feedback);
-            console.error('Error:', error);
-        })
-        .finally(() => {
-            button.disabled = false;
-            button.textContent = 'Send Message';
-        });
+    .catch(error => {
+      console.error(error);
+      statusMessage.textContent = '❌ Failed to send. Try again.';
+      statusMessage.style.color = 'red';
+    });
 });
