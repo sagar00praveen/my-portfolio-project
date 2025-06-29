@@ -1,10 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Contact</title>
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
 </head>
 <body>
   <header>
@@ -14,10 +15,11 @@
       <a href="projects.html">Projects</a>
       <a href="blender.html">Blender</a>
       <a href="contact.html">Contact</a>
+      <button id="toggleTheme">🌓</button>
     </nav>
   </header>
 
-  <section class="contact">
+  <section class="contact animate__animated animate__fadeInUp">
     <h2>Contact Me</h2>
     <form id="contactForm">
       <input type="text" id="name" placeholder="Your Name" required />
@@ -25,9 +27,10 @@
       <textarea id="message" placeholder="Your Message" required></textarea>
       <button type="submit">Send Message</button>
     </form>
-    <div id="statusMessage" style="margin-top: 1rem;"></div>
+    <div id="statusMessage"></div>
   </section>
 
   <script src="script.js"></script>
+  <script src="theme.js"></script>
 </body>
 </html>
