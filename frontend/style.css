@@ -1,84 +1,71 @@
-body, html {
+body {
   margin: 0;
-  padding: 0;
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Segoe UI', sans-serif;
+  background: #0f0f0f;
+  color: #ffffff;
 }
-
-.navbar {
+header {
+  background: #111;
+  padding: 20px 40px;
   display: flex;
   justify-content: space-between;
-  padding: 20px 40px;
-  background: rgba(0,0,0,0.7);
-  position: absolute;
-  width: 100%;
-  z-index: 10;
+  align-items: center;
 }
-
-.navbar .logo {
-  color: white;
-  font-weight: bold;
+header h1 {
   font-size: 24px;
 }
-
-.nav-links {
-  list-style: none;
-  display: flex;
-  gap: 20px;
+.highlight {
+  color: red;
 }
-
-.nav-links li {
+nav a {
   color: white;
-  cursor: pointer;
-}
-
-.hero {
-  height: 100vh;
-  background: url('your-image.jpg') no-repeat center center/cover;
-  display: flex;
-  align-items: center;
-  justify-content: left;
-  padding: 0 60px;
-  color: white;
-  position: relative;
-}
-
-.hero h1 {
-  font-size: 48px;
-  color: #ff7f7f;
-}
-
-.hero h2 {
-  font-size: 64px;
-  color: #ffe089;
-}
-
-.btn {
-  display: inline-block;
-  padding: 10px 20px;
-  border: 2px solid #ff7f7f;
-  color: white;
-  margin-top: 20px;
   text-decoration: none;
-  border-radius: 5px;
+  margin-left: 15px;
 }
-
-.filters {
-  padding: 20px;
-  background: white;
+.hero, .projects, .contact {
+  padding: 60px 20px;
   text-align: center;
 }
-
-.filters ul {
-  list-style: none;
+.hero h2 {
+  font-size: 2rem;
+}
+.links a {
+  display: inline-block;
+  margin: 10px;
+  color: #4dc0b5;
+}
+.card {
+  background: #1a1a1a;
+  margin: 20px auto;
+  padding: 20px;
+  max-width: 400px;
+  border-radius: 8px;
+}
+.card a {
+  color: #63b3ed;
+}
+form {
   display: flex;
-  justify-content: center;
-  gap: 20px;
+  flex-direction: column;
+  gap: 1rem;
+  max-width: 400px;
+  margin: 20px auto;
 }
-
-.filters li {
+input, textarea {
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #444;
+  background: #1e1e1e;
+  color: white;
+}
+button {
+  padding: 10px;
+  background: #38bdf8;
+  color: white;
+  border: none;
+  border-radius: 6px;
   cursor: pointer;
-  font-weight: 500;
 }
-.filters .active {
-  color: #ff5e5e;
+button:hover {
+  background: #0ea5e9;
 }
