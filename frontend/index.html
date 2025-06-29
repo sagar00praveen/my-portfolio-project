@@ -1,60 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Portfolio</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portfolio - Jackson</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+  <header>
+    <nav class="navbar">
+      <div class="logo">Alime.</div>
+      <ul class="nav-links">
+        <li>Home</li>
+        <li>Pages</li>
+        <li>About</li>
+        <li>Gallery</li>
+        <li>Blog</li>
+        <li>Contact</li>
+      </ul>
+    </nav>
+  </header>
 
-    <header>
-        <h1>Welcome to My Portfolio</h1>
-        <nav>
-            <a href="#about">About</a>
-            <a href="#projects">Projects</a>
-            <a href="#contact">Contact</a>
-        </nav>
-    </header>
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Hello</h1>
+      <h2>I'm Jackson</h2>
+      <p>I photograph very instinctively. I see how it is taken like that...</p>
+      <a href="#contact" class="btn">Get A Quote</a>
+      <p class="email">hello.alime@gmail.com</p>
+    </div>
+  </section>
 
-    <section id="about">
-        <h2>About Me</h2>
-        <p>Hello! I'm a passionate developer focused on building beautiful and functional websites and applications. I love turning ideas into reality with clean, efficient code.</p>
-    </section>
-
-    <section id="projects">
-        <h2>Projects</h2>
-
-        <div class="project">
-            <h3>Project 1</h3>
-            <p>A brief description of Project 1. <br><a href="#" target="_blank">View Project</a></p>
-        </div>
-
-        <div class="project">
-            <h3>Project 2</h3>
-            <p>A brief description of Project 2. <br><a href="#" target="_blank">View Project</a></p>
-        </div>
-
-        <div class="project">
-            <h3>Project 3</h3>
-            <p>A brief description of Project 3. <br><a href="#" target="_blank">View Project</a></p>
-        </div>
-    </section>
-
-    <section id="contact">
-        <h2>Contact Me</h2>
-        <form id="contactForm">
-            <input type="text" id="name" placeholder="Your Name" required>
-            <input type="email" id="email" placeholder="Your Email" required>
-            <textarea id="message" placeholder="Your Message" rows="5" required></textarea>
-            <button type="submit">Send Message</button>
-        </form>
-    </section>
-
-    <footer>
-        <p>© 2025 My Portfolio | Designed by Me</p>
-    </footer>
-
-    <script src="script.js"></script>
+  <section class="filters">
+    <ul>
+      <li class="active">All</li>
+      <li>Human</li>
+      <li>Nature</li>
+      <li>Country</li>
+      <li>Video</li>
+    </ul>
+  </section>
 </body>
 </html>
