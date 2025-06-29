@@ -1,81 +1,81 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="dark">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Sagar Praveen | Portfolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sagar | Portfolio</title>
   <link rel="stylesheet" href="style.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
-  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css"/>
 </head>
 <body>
-  <header class="glass-nav">
-    <h1 class="logo">Sagar<span class="dot">.</span></h1>
+
+  <!-- Navigation -->
+  <header class="navbar">
+    <div class="logo">Sagar<span>.</span></div>
     <nav>
-      <a href="#about">About</a>
+      <a href="#home">About</a>
       <a href="#projects">Projects</a>
       <a href="#resume">Resume</a>
       <a href="#contact">Contact</a>
-      <button id="toggleTheme">🌓</button>
+      <button id="theme-toggle">🌙</button>
     </nav>
   </header>
 
-  <main>
-    <section class="hero parallax" id="about">
-      <div class="hero-content" data-aos="fade-up">
-        <h2>Hello, I'm <span class="highlight">Sagar Praveen</span></h2>
-        <p>A software engineer & 3D artist blending code and creativity.</p>
-      </div>
-    </section>
+  <!-- Hero Section -->
+  <section id="home" class="section">
+    <h1>Hello, I'm Sagar Praveen</h1>
+    <p>A software engineer & 3D artist blending code and creativity.</p>
+  </section>
 
-    <section class="section glass" id="projects">
-      <h2 data-aos="fade-up">My Work</h2>
-      <div class="grid">
-        <div class="card" data-aos="zoom-in">
-          <h3>Portfolio Website</h3>
-          <p>Apple-style portfolio with JS and animations.</p>
-          <a href="https://my-portfolio-project-w8q9.onrender.com" target="_blank">View</a>
-        </div>
-        <div class="card" data-aos="zoom-in">
-          <h3>Lung Cancer Detection</h3>
-          <p>Flask-based deep learning app for X-ray analysis.</p>
-          <a href="https://github.com/sagar00praveen/lung-cancer-detection" target="_blank">GitHub</a>
-        </div>
-        <div class="card" data-aos="zoom-in">
-          <h3>Spider-Man FX</h3>
-          <p>Blender animation scene with VFX and lighting.</p>
-          <a href="https://instagram.com/your_blender_page" target="_blank">Watch</a>
-        </div>
-      </div>
-    </section>
+  <!-- Projects -->
+  <section id="projects" class="section">
+    <h2>My Work</h2>
 
-    <section class="section glass techspecs" id="resume">
-      <h2 data-aos="fade-up">Resume / Tech Specs</h2>
-      <div class="spec" data-aos="fade-left">
-        <div><strong>Name:</strong></div><div>Sagar Praveen</div>
-        <div><strong>Role:</strong></div><div>Software Engineer & 3D Artist</div>
-        <div><strong>Languages:</strong></div><div>Python, JavaScript, HTML, CSS</div>
-        <div><strong>Tools:</strong></div><div>Flask, MongoDB, Blender</div>
-        <div><strong>Education:</strong></div><div>B.Tech CSE @ NRI Institute</div>
-        <div><strong>Location:</strong></div><div>Vijayawada, India</div>
-      </div>
-    </section>
+    <div class="project">
+      <h3>Portfolio Website</h3>
+      <p>Apple-style portfolio with JS and animations.</p>
+      <a href="#">View</a>
+    </div>
 
-    <section class="section glass" id="contact">
-      <h2 data-aos="fade-up">Let's Connect</h2>
-      <form id="contactForm" data-aos="fade-up">
-        <input type="text" id="name" placeholder="Your Name" required />
-        <input type="email" id="email" placeholder="Your Email" required />
-        <textarea id="message" placeholder="Your Message" required></textarea>
-        <button type="submit">Send Message</button>
-        <div id="statusMessage"></div>
-      </form>
-    </section>
-  </main>
+    <div class="project">
+      <h3>Lung Cancer Detection</h3>
+      <p>Flask-based deep learning app for X-ray analysis.</p>
+      <a href="https://github.com/sagar00praveen">GitHub</a>
+    </div>
 
-  <script src="theme.js"></script>
+    <div class="project">
+      <h3>Spider-Man FX</h3>
+      <p>Blender animation scene with VFX and lighting.</p>
+      <a href="#">Watch</a>
+    </div>
+  </section>
+
+  <!-- Resume -->
+  <section id="resume" class="section">
+    <h2>Resume / Tech Specs</h2>
+    <ul>
+      <li><strong>Name:</strong> Sagar Praveen</li>
+      <li><strong>Role:</strong> Software Engineer</li>
+      <li><strong>Tech Stack:</strong> HTML, CSS, JS, Python, MongoDB, Flask</li>
+      <li><strong>3D Skills:</strong> Blender, VFX, Lighting</li>
+    </ul>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="section">
+    <h2>Contact Me</h2>
+    <form id="contactForm">
+      <input type="text" id="name" placeholder="Your Name" required />
+      <input type="email" id="email" placeholder="Your Email" required />
+      <textarea id="message" placeholder="Your Message" rows="5" required></textarea>
+      <button type="submit">Send Message</button>
+      <p id="formStatus"></p>
+    </form>
+  </section>
+
+  <footer>
+    <p>© 2025 Sagar Praveen. All rights reserved.</p>
+  </footer>
+
   <script src="script.js"></script>
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <script>AOS.init({ once: true });</script>
 </body>
 </html>
