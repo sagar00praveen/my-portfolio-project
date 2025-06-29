@@ -1,13 +1,18 @@
 document.getElementById('contactForm').addEventListener('submit', function (e) {
   e.preventDefault();
-
   const name = document.getElementById('name').value.trim();
   const email = document.getElementById('email').value.trim();
   const message = document.getElementById('message').value.trim();
-  const statusMessage = document.getElementById('statusMessage');
+  const status = document.getElementById('statusMessage');
 
-  statusMessage.textContent = 'Sending...';
-  statusMessage.style.color = 'lightblue';
+  if (!name || !email || !message) {
+    status.textContent = '❌ Please fill out all fields.';
+    status.style.color = 'orange';
+    return;
+  }
+
+  status.textContent = 'Sending...';
+  status.style.color = 'lightblue';
 
   fetch('https://my-portfolio-project-w8q9.onrender.com/api/contact', {
     method: 'POST',
@@ -16,13 +21,12 @@ document.getElementById('contactForm').addEventListener('submit', function (e) {
   })
     .then(response => response.json())
     .then(data => {
-      statusMessage.textContent = '✅ Message sent!';
-      statusMessage.style.color = 'green';
+      status.textContent = '✅ Message sent!';
+      status.style.color = 'green';
       document.getElementById('contactForm').reset();
     })
-    .catch(error => {
-      console.error(error);
-      statusMessage.textContent = '❌ Failed to send. Try again.';
-      statusMessage.style.color = 'red';
+    .catch(() => {
+      status.textContent = '❌ Failed to send message.';
+      status.style.color = 'red';
     });
 });
