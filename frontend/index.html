@@ -2,43 +2,95 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Portfolio - Jackson</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sagar Praveen | Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+    }
+  </style>
 </head>
-<body>
-  <header>
-    <nav class="navbar">
-      <div class="logo">Alime.</div>
-      <ul class="nav-links">
-        <li>Home</li>
-        <li>Pages</li>
-        <li>About</li>
-        <li>Gallery</li>
-        <li>Blog</li>
-        <li>Contact</li>
-      </ul>
+<body class="bg-gray-950 text-white">
+
+  <!-- Header -->
+  <header class="bg-gray-900 px-6 py-4 flex justify-between items-center sticky top-0 z-50 shadow-lg">
+    <h1 class="text-2xl font-bold">Sagar<span class="text-red-500">.</span></h1>
+    <nav class="space-x-6 text-sm md:text-base">
+      <a href="#skills" class="hover:text-pink-400">Skills</a>
+      <a href="#projects" class="hover:text-pink-400">Projects</a>
+      <a href="#certifications" class="hover:text-pink-400">Certifications</a>
+      <a href="#contact" class="hover:text-pink-400">Contact</a>
     </nav>
   </header>
 
-  <section class="hero">
-    <div class="hero-content">
-      <h1>Hello</h1>
-      <h2>I'm Jackson</h2>
-      <p>I photograph very instinctively. I see how it is taken like that...</p>
-      <a href="#contact" class="btn">Get A Quote</a>
-      <p class="email">hello.alime@gmail.com</p>
+  <!-- Hero Section -->
+  <section class="text-center py-20 bg-gradient-to-b from-black via-gray-900 to-gray-950">
+    <h2 class="text-5xl font-bold text-yellow-300 mb-4">Hello, I'm Sagar Praveen</h2>
+    <p class="max-w-xl mx-auto text-gray-400 text-lg">A developer and 3D artist passionate about blending technology and creativity. I build web apps, design systems, and create Blender animations.</p>
+    <div class="mt-6 flex justify-center gap-4">
+      <a href="https://github.com/sagar00praveen" target="_blank" class="text-blue-400 underline">GitHub</a>
+      <a href="https://www.linkedin.com/in/sagar-praveen/" target="_blank" class="text-blue-400 underline">LinkedIn</a>
+      <a href="mailto:sagar.y.praveen@gmail.com" class="text-blue-400 underline">Email</a>
     </div>
   </section>
 
-  <section class="filters">
-    <ul>
-      <li class="active">All</li>
-      <li>Human</li>
-      <li>Nature</li>
-      <li>Country</li>
-      <li>Video</li>
+  <!-- Skills -->
+  <section id="skills" class="px-6 py-16 bg-gray-900">
+    <h2 class="text-3xl font-bold mb-8 text-center">🛠️ Developer & Design Skills</h2>
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 text-sm text-gray-300">
+      <div class="bg-gray-800 p-4 rounded">Python, C++, Flask, MySQL</div>
+      <div class="bg-gray-800 p-4 rounded">HTML, CSS, JavaScript, Plotly</div>
+      <div class="bg-gray-800 p-4 rounded">MongoDB, PowerBI, GitHub</div>
+      <div class="bg-gray-800 p-4 rounded">VS Code, Jupyter, Pycharm</div>
+      <div class="bg-gray-800 p-4 rounded">Dialogflow, Bubble, Pega GenAI</div>
+      <div class="bg-gray-800 p-4 rounded">Blender, Figma</div>
+    </div>
+  </section>
+
+  <!-- Projects -->
+  <section id="projects" class="px-6 py-16">
+    <h2 class="text-3xl font-bold mb-10 text-center">🚀 Projects</h2>
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div class="bg-gray-800 p-4 rounded">
+        <h3 class="text-xl text-pink-400 mb-2">nagu-pamu-language</h3>
+        <p class="text-gray-400 text-sm">A humorous programming language built in C++ with custom syntax parsing.</p>
+        <a href="https://github.com/sagar00praveen/nagu-pamu-language" class="text-blue-400 underline mt-2 inline-block">GitHub Repo</a>
+      </div>
+      <div class="bg-gray-800 p-4 rounded">
+        <h3 class="text-xl text-pink-400 mb-2">Stock Price Predictor</h3>
+        <p class="text-gray-400 text-sm">Flask web app with ML model & Plotly charts to predict stock prices.</p>
+        <a href="https://github.com/sagar00praveen/stock-prices" class="text-blue-400 underline mt-2 inline-block">GitHub Repo</a>
+      </div>
+      <div class="bg-gray-800 p-4 rounded">
+        <h3 class="text-xl text-pink-400 mb-2">Spider-Man vs Electro</h3>
+        <p class="text-gray-400 text-sm">3D Blender animation with cinematic effects and lightning simulation.</p>
+        <a href="https://instagram.com/your_blender_page" class="text-blue-400 underline mt-2 inline-block">Watch on Instagram</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Certifications -->
+  <section id="certifications" class="px-6 py-16 bg-gray-900">
+    <h2 class="text-3xl font-bold mb-8 text-center">📜 Certifications</h2>
+    <ul class="list-disc list-inside text-gray-300 max-w-xl mx-auto space-y-2">
+      <li><a href="https://www.freecodecamp.org/certification/sagar_praveen/javascript-algorithms-and-data-structures-v8" class="text-blue-400 underline">JavaScript Algorithms & Data Structures – freeCodeCamp</a></li>
+      <li><a href="https://www.freecodecamp.org/certification/sagar_praveen/responsive-web-design" class="text-blue-400 underline">Responsive Web Design – freeCodeCamp</a></li>
+      <li><a href="https://infyspringboard.com/" class="text-blue-400 underline">Basics of Python – InfySpringboard</a></li>
     </ul>
   </section>
+
+  <!-- Contact -->
+  <section id="contact" class="px-6 py-16 text-center">
+    <h2 class="text-3xl font-bold mb-4">📫 Contact</h2>
+    <p class="text-gray-400 mb-2">📍 Vijayawada, Andhra Pradesh, India</p>
+    <p class="text-gray-400">📧 <a href="mailto:sagar.y.praveen@gmail.com" class="text-blue-400 underline">sagar.y.praveen@gmail.com</a></p>
+    <p class="text-gray-400">📱 +91 8978539071</p>
+  </section>
+
+  <footer class="bg-black text-center py-4 text-sm text-gray-600 border-t border-gray-800">
+    © 2025 Sagar Praveen. All rights reserved.
+  </footer>
 </body>
 </html>
