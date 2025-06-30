@@ -3,79 +3,78 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Sagar | Portfolio</title>
+  <title>Sagar Praveen | Developer & 3D Artist</title>
   <link rel="stylesheet" href="style.css" />
+  <script src="script.js" defer></script>
 </head>
 <body>
-
-  <!-- Navigation -->
-  <header class="navbar">
-    <div class="logo">Sagar<span>.</span></div>
+  <header>
+    <div class="logo">Sagar.</div>
     <nav>
-      <a href="#home">About</a>
+      <a href="#home">Home</a>
       <a href="#projects">Projects</a>
       <a href="#resume">Resume</a>
       <a href="#contact">Contact</a>
-      <button id="theme-toggle">🌙</button>
+      <button id="themeToggle">🌓</button>
     </nav>
   </header>
 
-  <!-- Hero Section -->
   <section id="home" class="section">
-    <h1>Hello, I'm Sagar Praveen</h1>
-    <p>A software engineer & 3D artist blending code and creativity.</p>
+    <div class="content fade-in">
+      <h1>Hello, I'm <span>Sagar Praveen</span></h1>
+      <p>A software engineer & 3D artist blending code and creativity.</p>
+    </div>
   </section>
 
-  <!-- Projects -->
   <section id="projects" class="section">
-    <h2>My Work</h2>
+    <div class="content fade-up">
+      <h2>My Work</h2>
 
-    <div class="project">
-      <h3>Portfolio Website</h3>
-      <p>Apple-style portfolio with JS and animations.</p>
-      <a href="#">View</a>
-    </div>
+      <div class="card">
+        <h3>🌐 Portfolio Website</h3>
+        <p>Apple-style portfolio with JS and animations.</p>
+        <a href="#" target="_blank">View</a>
+      </div>
 
-    <div class="project">
-      <h3>Lung Cancer Detection</h3>
-      <p>Flask-based deep learning app for X-ray analysis.</p>
-      <a href="https://github.com/sagar00praveen">GitHub</a>
-    </div>
+      <div class="card">
+        <h3>🩺 Lung Cancer Detection</h3>
+        <p>Flask-based deep learning app for X-ray analysis.</p>
+        <a href="https://github.com/sagar00praveen" target="_blank">GitHub</a>
+      </div>
 
-    <div class="project">
-      <h3>Spider-Man FX</h3>
-      <p>Blender animation scene with VFX and lighting.</p>
-      <a href="#">Watch</a>
+      <div class="card">
+        <h3>🕷️ Spider-Man FX</h3>
+        <p>Blender VFX animation with lighting and dynamics.</p>
+        <a href="#" target="_blank">Watch</a>
+      </div>
     </div>
   </section>
 
-  <!-- Resume -->
   <section id="resume" class="section">
-    <h2>Resume / Tech Specs</h2>
-    <ul>
-      <li><strong>Name:</strong> Sagar Praveen</li>
-      <li><strong>Role:</strong> Software Engineer</li>
-      <li><strong>Tech Stack:</strong> HTML, CSS, JS, Python, MongoDB, Flask</li>
-      <li><strong>3D Skills:</strong> Blender, VFX, Lighting</li>
-    </ul>
+    <div class="content fade-up">
+      <h2>Resume / Tech Specs</h2>
+      <p><strong>Name:</strong> Sagar Praveen</p>
+      <p><strong>Role:</strong> Developer | Blender Artist</p>
+      <p><strong>Languages:</strong> Python, JS, HTML, CSS</p>
+      <p><strong>Tools:</strong> Flask, MongoDB, Blender</p>
+    </div>
   </section>
 
-  <!-- Contact -->
   <section id="contact" class="section">
-    <h2>Contact Me</h2>
-    <form id="contactForm">
-      <input type="text" id="name" placeholder="Your Name" required />
-      <input type="email" id="email" placeholder="Your Email" required />
-      <textarea id="message" placeholder="Your Message" rows="5" required></textarea>
-      <button type="submit">Send Message</button>
-      <p id="formStatus"></p>
-    </form>
+    <div class="content fade-up">
+      <h2>Contact Me</h2>
+      <form id="contactForm">
+        <input type="text" id="name" placeholder="Your Name" required />
+        <input type="email" id="email" placeholder="Your Email" required />
+        <textarea id="message" placeholder="Your Message" required></textarea>
+        <button type="submit">Send Message</button>
+      </form>
+      <div id="feedback" class="feedback"></div>
+    </div>
   </section>
 
   <footer>
-    <p>© 2025 Sagar Praveen. All rights reserved.</p>
+    <p>© 2025 Sagar Praveen</p>
   </footer>
-
-  <script src="script.js"></script>
 </body>
 </html>
