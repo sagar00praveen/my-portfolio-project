@@ -3,78 +3,66 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Sagar Praveen | Developer & 3D Artist</title>
+  <title>Sagar Praveen | Portfolio</title>
   <link rel="stylesheet" href="style.css" />
-  <script src="script.js" defer></script>
 </head>
 <body>
   <header>
-    <div class="logo">Sagar.</div>
+    <h2>Sagar Praveen</h2>
     <nav>
       <a href="#home">Home</a>
+      <a href="#about">About</a>
       <a href="#projects">Projects</a>
-      <a href="#resume">Resume</a>
       <a href="#contact">Contact</a>
-      <button id="themeToggle">🌓</button>
+      <button id="theme-toggle">🌓</button>
     </nav>
   </header>
 
-  <section id="home" class="section">
-    <div class="content fade-in">
-      <h1>Hello, I'm <span>Sagar Praveen</span></h1>
-      <p>A software engineer & 3D artist blending code and creativity.</p>
+  <section class="hero section" id="home">
+    <h1 class="animate">Designer + Developer</h1>
+    <p class="animate">Blending creativity with code to build beautiful, useful things.</p>
+  </section>
+
+  <section id="about" class="section animate">
+    <h2>About Me</h2>
+    <p>I’m a developer & 3D artist based in India. I craft interactive experiences using clean code and creative tools.</p>
+  </section>
+
+  <section id="projects" class="section animate">
+    <h2>Selected Projects</h2>
+
+    <div class="project">
+      <img src="images/project1.jpg" alt="Portfolio Screenshot" />
+      <div>
+        <h3>Portfolio Website</h3>
+        <p>Fully responsive personal portfolio built with HTML, CSS, and JS.</p>
+      </div>
+    </div>
+
+    <div class="project">
+      <img src="images/project2.jpg" alt="Lung Cancer Detection App" />
+      <div>
+        <h3>Lung Cancer Detection App</h3>
+        <p>Flask-based ML app for X-ray classification using CNN.</p>
+      </div>
     </div>
   </section>
 
-  <section id="projects" class="section">
-    <div class="content fade-up">
-      <h2>My Work</h2>
-
-      <div class="card">
-        <h3>🌐 Portfolio Website</h3>
-        <p>Apple-style portfolio with JS and animations.</p>
-        <a href="#" target="_blank">View</a>
-      </div>
-
-      <div class="card">
-        <h3>🩺 Lung Cancer Detection</h3>
-        <p>Flask-based deep learning app for X-ray analysis.</p>
-        <a href="https://github.com/sagar00praveen" target="_blank">GitHub</a>
-      </div>
-
-      <div class="card">
-        <h3>🕷️ Spider-Man FX</h3>
-        <p>Blender VFX animation with lighting and dynamics.</p>
-        <a href="#" target="_blank">Watch</a>
-      </div>
-    </div>
-  </section>
-
-  <section id="resume" class="section">
-    <div class="content fade-up">
-      <h2>Resume / Tech Specs</h2>
-      <p><strong>Name:</strong> Sagar Praveen</p>
-      <p><strong>Role:</strong> Developer | Blender Artist</p>
-      <p><strong>Languages:</strong> Python, JS, HTML, CSS</p>
-      <p><strong>Tools:</strong> Flask, MongoDB, Blender</p>
-    </div>
-  </section>
-
-  <section id="contact" class="section">
-    <div class="content fade-up">
-      <h2>Contact Me</h2>
-      <form id="contactForm">
-        <input type="text" id="name" placeholder="Your Name" required />
-        <input type="email" id="email" placeholder="Your Email" required />
-        <textarea id="message" placeholder="Your Message" required></textarea>
-        <button type="submit">Send Message</button>
-      </form>
-      <div id="feedback" class="feedback"></div>
-    </div>
+  <section id="contact" class="section animate">
+    <h2>Contact</h2>
+    <form id="contactForm">
+      <input type="text" id="name" placeholder="Your Name" required />
+      <input type="email" id="email" placeholder="Your Email" required />
+      <textarea id="message" placeholder="Your Message" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+    <div id="feedback" class="feedback"></div>
   </section>
 
   <footer>
-    <p>© 2025 Sagar Praveen</p>
+    <p>© 2025 Sagar Praveen | Inspired by Adham Dannaway</p>
   </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
